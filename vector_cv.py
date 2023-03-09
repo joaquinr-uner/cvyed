@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 def vector_cv (x1,x2,y1,y2,ejes = None,color='b',x_min=-5,x_max=5,y_min=-5,y_max=5):
     #posibles colores: 'b' blue 'g' green 'r' red 'c' cyan 'm' magenta 'y' yellow 'k' black 'w' white
     
