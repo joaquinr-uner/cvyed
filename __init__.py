@@ -19,3 +19,4 @@ from .fig_ejes_cv import fig_ejes_cv
 from .fig_ejes3d_cv import fig_ejes3d_cv
 from .esfera import esfera
 from .dominio import dominio
+import .surf2stl as surf2stl
