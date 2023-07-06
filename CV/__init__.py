@@ -1,5 +1,4 @@
-import sys
-sys.path.insert(0,'..')
+from .surf2stl import triwrite
 from .intervalo import intervalo
 from .plot3d_parametric_line_CV import plot3d_parametric_line_CV
 from .tubo_3d import tubo_3d
