@@ -1,8 +1,8 @@
-import sympy as sp
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.tri as mtri
-from scipy.spatial import Delaunay
+#import sympy as sp
+#import numpy as np
+#import matplotlib.pyplot as plt
+#import matplotlib.tri as mtri
+#from scipy.spatial import Delaunay
 
 #from .surf2stl import tri_write
 #from .intervalo import intervalo
