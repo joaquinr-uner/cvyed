@@ -2,7 +2,6 @@ import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.tri as mtri
-from .surf2stl.py import tri_write
 from scipy.spatial import Delaunay
 
 from .dominio.py import dominio
