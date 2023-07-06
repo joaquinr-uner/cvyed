@@ -3,7 +3,7 @@
 #build-backend = "setuptools.build_meta"
 
 [project]
-#name = "CV"
+name = "CV"
 #version = "2023.0.1"
 #description = "Paquete de funciones complementarias para el dictado de la materia Cálculo Vectorial en la Facultad de Ingeniería - Universidad Nacional de Entre Ríos"
 #readme = "README.md"
