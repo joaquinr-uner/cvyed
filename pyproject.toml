@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CV"
+version = "2023.0.1"
+authors = [
+    {name = "Cálculo Vectorial FIUNER", email = "calculo_vectorial@ingenieria.uner.edu.ar"},
+]
+maintainers = [
+  {name = "Joaquin Ruiz", email = "joaquin.ruiz@uner.edu.ar"}
+]
+description = "Paquete de funciones complementarias para el dictado de la materia Cálculo Vectorial en la Facultad de Ingeniería - Universidad Nacional de Entre Ríos"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["multivariate calculus", "symbolic programming", "3d printing"]
+classifiers = [
+  "Development Status :: 1 - Beta",
+  "Programming Language :: Python"
+]
+dependencies = [
+    "numpy",
+    "sympy",
+    "matplotlib",
+    "scipy",
+    "surf2stl @ git+ssh://git@github.com/asahidari/surf2stl-python.git
+]
+[project.urls]
+Repository = "https://github.com/joaquinr-uner/CV.git"
