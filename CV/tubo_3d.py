@@ -2,7 +2,7 @@ import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.tri as mtri
-import surf2stl
+from .surf2stl import surf2stl
 from scipy.spatial import Delaunay
 
 def tubo_3d(x,y,z,T=(sp.symbols('t'),-10,10),radio=1, ejes = None, archivo = None):
