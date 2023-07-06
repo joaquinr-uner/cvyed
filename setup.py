@@ -25,6 +25,7 @@ setup(
         "sympy",
         "matplotlib",
         "scipy",
+        "git+https://github.com/remcohaszing/pywakeonlan.git",
     ],
     author="CVyED - FIUNER",
 )
