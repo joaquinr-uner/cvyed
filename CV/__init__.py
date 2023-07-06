@@ -1,4 +1,4 @@
-from .surf2stil import surf2stl
+from .surf2stl import surf2stl
 from .intervalo import intervalo
 from .plot3d_parametric_line_CV import plot3d_parametric_line_CV
 from .tubo_3d import tubo_3d
