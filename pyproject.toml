@@ -24,7 +24,7 @@ dependencies = [
     "sympy",
     "matplotlib",
     "scipy",
-    "surf2stl @ git+ssh://git@github.com/asahidari/surf2stl-python.git
+    "surf2stl @ git+ssh://git@github.com/asahidari/surf2stl-python.git",
 ]
 [project.urls]
 Repository = "https://github.com/joaquinr-uner/CV.git"
