@@ -17,5 +17,5 @@ from .sup_nivel_cv import sup_nivel_cv
 from .tubo_3d import tubo_3d
 from .vector3d_cv import vector3d_cv
 from .vector_cv import vector_cv
-from .surf2stil import tri_write
+from .surf2stl import tri_write
 from .plot_implicit_3d_cv import plot_implicit_3d_cv
