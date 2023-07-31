@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 def retrato_fase(X,Y,U,V,ejes = None):
     
     if(ejes == None):
