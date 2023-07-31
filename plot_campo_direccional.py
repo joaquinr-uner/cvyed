@@ -1,4 +1,5 @@
 import sympy as sp
+import numpy as np
 import matplotlib.pyplot as plt
 def plot_campo_direccional(x, y_x, f_xy, x_lim=(-5, 5), y_lim=(-5, 5), ax=None):
     """Esta función dibuja el campo de dirección de una EDO"""
