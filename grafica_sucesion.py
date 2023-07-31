@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 def grafica_sucesion(n,A_n,ejes = None):
     
     #Cantidad de terminos de la sucesion a graficar
