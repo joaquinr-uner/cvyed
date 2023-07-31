@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def sup_nivel_cv(x=np.linspace(-5, 5,100),y=np.linspace(1, 2,100),Z=0):
 
