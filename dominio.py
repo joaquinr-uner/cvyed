@@ -1,3 +1,4 @@
+import numpy as np
 def dominio (x_min=0,x_max=0,y_min=0,y_max=0,z_min=0,z_max=0):
     D={}
     if x_min == 0 and x_max == 0 and y_min == 0 and y_max == 0 and z_min == 0 and z_max == 0:
