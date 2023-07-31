@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 def punto_cv (x1,x2,color='r',ejes = None, x_min=-5,x_max=5,y_min=-5,y_max=5):
     """
     A helper function to make a graph.
