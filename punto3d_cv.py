@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 def punto3d_cv (x1,x2,x3,ejes = None,color='r',x_min=-5,x_max=5,y_min=-5,y_max=5,z_min=-5,z_max=5):
     #posibles colores: 'b' blue 'g' green 'r' red 'c' cyan 'm' magenta 'y' yellow 'k' black 'w' white
     if(ejes == None):
