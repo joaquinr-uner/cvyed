@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 def fig_ejes_cv(color='r',x_min=-5,x_max=5,y_min=-5,y_max=5):
     #fig, ax = plt.subplots(figsize=(5, 2.7), layout='constrained')
     fig, ax = plt.subplots()
