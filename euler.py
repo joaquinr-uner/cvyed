@@ -1,4 +1,5 @@
-def euler(a, b, h, y0):
+import numpy as np
+def euler(a, b, h, y0,fun):
     """ Metodo de Euler en el intervalo [a, b] usando un paso de h y condición inicial y0 """
     
     N = int((b - a)/h) # definimos la cantidad de iteraciones necesarias para recorrer el intervalo [ a , b ]
