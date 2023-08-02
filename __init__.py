@@ -22,6 +22,6 @@ from .plot_implicit_3d_cv import plot_implicit_3d_cv
 
 from .indice import indice
 from .euler import euler
-from .plot_campo_direccional import plot_campo_direccional
+from .plot_campo_de_direcciones import plot_campo_de_direcciones
 from .retrato_fase import retrato_fase
 from .grafica_sucesion import grafica_sucesion
