@@ -1,10 +1,11 @@
 import matplotlib.pyplot as plt
-import numpy as np
+import sympy as np
 def grafica_sucesion(nn,A_n,ejes = None, label = ''):
     
     if type(A_n) is list:
         a_n=A_n
     else:
+        n = sp.Symbol('n')
         a_n  = [A_n.subs(n,i) for i in nn]
     
     
