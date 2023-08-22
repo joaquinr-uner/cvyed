@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 import sympy as sp
+import numpy as np
 def grafica_sucesion(nn,A_n,ejes = None, label = ''):
     
-    if type(A_n) is list:
+    if type(A_n) is np.ndarray:
         a_n=A_n
     else:
         n = sp.Symbol('n')
