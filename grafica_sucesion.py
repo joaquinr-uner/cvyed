@@ -1,16 +1,7 @@
 import matplotlib.pyplot as plt
 def grafica_sucesion(nn,A_n,ejes = None, label = ''):
     
-    #Cantidad de terminos de la sucesion a graficar
-    #N=100
-    #Valor inicial del indice n de la sucesión
-    #k=1
-    # Creamos un rango de valores dentro del intervalo (k,k+N), 
-    #nn = np.arange(k,k+N)
-    
-    #la expresion anterior lo que esta realizando es un bucle, donde se reemplaza el valor de n por cada uno de los elementos del rAngo definido.
-    #a_n=[A_n for n in nn]
-    if type(a) is np.ndarray:
+    if type(A_n) is np.ndarray:
         a_n=A_n
     else:
         a_n  = [A_n.subs(n,i) for i in nn]
@@ -27,7 +18,7 @@ def grafica_sucesion(nn,A_n,ejes = None, label = ''):
         plt.xlabel('n')
         plt.ylabel('a_n')
         #Define el rango de visualizacion de n
-        axes.set_xlim(n[0],nn[len(n)-1])
+        axes.set_xlim(nn[0],nn[len(n)-1])
         #Agrega una grilla
         axes.grid()
         #Agrega una leyenda
