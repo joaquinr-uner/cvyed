@@ -1,6 +1,6 @@
 import numpy as np
 import sympy as sp
-def sum_par(a_n,inicio,final):
+def sum_par(a_n,inicio=1,final=20):
     # definimos la sumatora que va desde el inicio al valor final.
 
     n = sp.Symbol('n')
