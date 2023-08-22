@@ -29,5 +29,5 @@ def grafica_sucesion(nn,A_n,ejes = None, label = ''):
     
         return None
     else:
-        out = ejes.plot(n, a_n,label=label,marker='o',ls='--')# ls = estilo de linea
+        out = ejes.plot(nn, a_n,label=label,marker='o',ls='--')# ls = estilo de linea
         return out
