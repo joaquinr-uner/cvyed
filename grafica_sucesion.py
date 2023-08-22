@@ -18,7 +18,7 @@ def grafica_sucesion(nn,A_n,ejes = None, label = ''):
         plt.xlabel('n')
         plt.ylabel('a_n')
         #Define el rango de visualizacion de n
-        axes.set_xlim(nn[0],nn[len(n)-1])
+        axes.set_xlim(nn[0],nn[len(nn)-1])
         #Agrega una grilla
         axes.grid()
         #Agrega una leyenda
