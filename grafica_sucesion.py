@@ -10,7 +10,7 @@ def grafica_sucesion(nn,A_n,ejes = None, label = ''):
     
     #la expresion anterior lo que esta realizando es un bucle, donde se reemplaza el valor de n por cada uno de los elementos del rAngo definido.
     #a_n=[A_n for n in nn]
-    if np.isarray(A_n):
+    if type(a) is np.ndarray:
         a_n=A_n
     else:
         a_n  = [A_n.subs(n,i) for i in nn]
