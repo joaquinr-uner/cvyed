@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 def grafica_sucesion(nn,A_n,ejes = None, label = ''):
     
-    if type(A_n) is np.ndarray:
+    if type(A_n) is list:
         a_n=A_n
     else:
         a_n  = [A_n.subs(n,i) for i in nn]
