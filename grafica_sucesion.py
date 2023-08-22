@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import sympy as np
+import sympy as sp
 def grafica_sucesion(nn,A_n,ejes = None, label = ''):
     
     if type(A_n) is list:
