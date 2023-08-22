@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 def grafica_sucesion(nn,A_n,ejes = None, label = ''):
     
     if type(A_n) is np.ndarray:
