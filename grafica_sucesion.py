@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-def grafica_sucesion(n,A_n,ejes = None):
+def grafica_sucesion(n,A_n,ejes = None, label = ''):
     
     #Cantidad de terminos de la sucesion a graficar
     #N=100
@@ -19,7 +19,7 @@ def grafica_sucesion(n,A_n,ejes = None):
         axes = fig.gca()
         #Graficamos (mediante puntos) sucesión {1/n} en el intervalo que creamos: (k,k+n) con pasos de 1
         #axes.scatter(n, a_n, label="1/n",s = 10)
-        axes.plot(n, a_n,marker='o',ls='--')# ls = estilo de linea
+        axes.plot(n, a_n,label=label,marker='o',ls='--')# ls = estilo de linea
         #Definimos las etiquetasde los ejes
         plt.xlabel('n')
         plt.ylabel('a_n')
@@ -32,5 +32,5 @@ def grafica_sucesion(n,A_n,ejes = None):
     
         return None
     else:
-        out = ejes.plot(n, a_n,marker='o',ls='--')# ls = estilo de linea
+        out = ejes.plot(n, a_n,label=label,marker='o',ls='--')# ls = estilo de linea
         return out
