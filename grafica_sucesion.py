@@ -7,7 +7,7 @@ def grafica_sucesion(nn,A_n,ejes = None, label = ''):
         a_n=A_n
     else:
         n = sp.Symbol('n')
-        a_n  = np.array[A_n.subs(n,i) for i in nn]
+        a_n  = np.array([A_n.subs(n,i) for i in nn])
     
     
     if(ejes == None):
