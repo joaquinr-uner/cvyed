@@ -1,3 +1,5 @@
+import numpy as np
+import sympy as sp
 def sum_par(a_n,inicio,final):
     # definimos la sumatora que va desde el inicio al valor final.
 
