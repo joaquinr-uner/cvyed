@@ -26,3 +26,4 @@ from .plot_campo_de_direcciones import plot_campo_de_direcciones
 from .retrato_fase import retrato_fase
 from .grafica_sucesion import grafica_sucesion
 from .sum_par import sum_par
+from .derivadas import derivadas
