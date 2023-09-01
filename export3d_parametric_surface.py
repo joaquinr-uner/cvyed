@@ -7,8 +7,8 @@ def export3d_parametric_surface(x,y,z,u,v,nu=100,nv=100,show=False,archivo=None)
 
     us, u1, u2 = u
     vs, v1, v2 = v
-
-    u1, u2, v1, v2 = float([u1, u2, v1, v2])
+    
+    u1, u2, v1, v2 = [float(l) for l in list([u1,u2,v1,v2])]
     unum = np.linspace(u1, u2, endpoint=True, num=nu)
     vnum = np.linspace(v1, v2, endpoint=True, num=nv)
     unum, vnum = np.meshgrid(unum,vnum)
