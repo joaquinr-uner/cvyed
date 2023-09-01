@@ -12,7 +12,8 @@ def export3d_parametric_surface(x,y,z,u,v,nu=100,nv=100,show=False,archivo=None)
     for i,l in enumerate(lims):
       if hasattr(l,'evalf'):
         lims[i] = l.evalf()
-    
+
+    u1, u2, v1, v2 = lims
     unum = np.linspace(u1, u2, endpoint=True, num=nu)
     vnum = np.linspace(v1, v2, endpoint=True, num=nv)
     unum, vnum = np.meshgrid(unum,vnum)
