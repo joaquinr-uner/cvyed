@@ -1,6 +1,6 @@
 import numpy as np
 import sympy as sp
-import surf2stl
+from .surf2stl import tri_write
 from scipy.spatial import Delaunay 
 import matplotlib.tri as mtri
 def export3d_parametric_surface(x,y,z,u,v,nu=100,nv=100,show=False,archivo=None):
@@ -29,7 +29,7 @@ def export3d_parametric_surface(x,y,z,u,v,nu=100,nv=100,show=False,archivo=None)
     if(archivo != None):
         #surf2stl.write(archivo, X, Y, Z)
         delaunay_tri = Delaunay(np.array([unum, vnum]).T)
-        surf2stl.tri_write(archivo, X_num, Y_num, Z_num, delaunay_tri)    
+        tri_write(archivo, X_num, Y_num, Z_num, delaunay_tri)    
 
     if show:
       sp.plotting.plot3d_parametric_surface(x,y,z,(us,u1,u2),(vs,v1,v2))
