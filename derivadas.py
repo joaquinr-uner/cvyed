@@ -1,5 +1,5 @@
 def derivadas(func,orden):
-    for sym in f.free_symbols:
+    for sym in func.free_symbols:
         t = sym
     derivadas = []
     #derivada[0]=func
