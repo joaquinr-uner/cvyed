@@ -1,36 +1,113 @@
 import matplotlib.pyplot as plt
-def retrato_fase(X,Y,U,V,densidad = 1, color= 'b', cond_in = [None,None], ejes = None):
+from matplotlib import animation, rc
+import IPython
+import numpy as np
+from scipy.integrate import odeint
+
+def animate(U_,V_,cond_in,fig,axes,X=(-1,1),Y=(-1,1)):
+
+  x_min, x_max = X
+  y_min, y_max = Y
+  def myODEs(vars,t,U_,V_):
+      # Unpack the variables
+      x,y = vars
+
+      Ur = U_(x,y)
+      Vr = V_(x,y)
+
+      # Return the derivatives
+      return [Ur, Vr]
+
+
+  t = np.linspace(0, 1, 100)
+  Solutions = []
+  for c in cond_in.T:
+    solution = odeint(myODEs, c, t, args=(U_,V_))
+    Solutions.append(solution)
+
+  # Create the animation
+  def update(frame):
+      #axes.clear()
+      #axes.streamplot(Xn,Yn,Un,Vn,
+      #              arrowstyle='->', arrowsize=1.5)
+      for sol in Solutions:
+        axes.plot(sol[:frame, 0], sol[:frame, 1],'r')
+      axes.set_xlim(x_min, x_max)
+      axes.set_ylim(y_min, y_max)
+
+      axes.set_xlabel('x')
+      axes.set_ylabel('y')
+
+  ani = animation.FuncAnimation(fig, update, frames=np.arange(0,100,5), interval=100, blit=False, repeat=False)
+  plt.show()
+  rc('animation', html='jshtml')
+  ani
+  return ani
+
+def retrato_fase_anim(U,V,X=(sp.Symbol('x'),-1,1),Y=(sp.Symbol('y'),-1,1),densidad = 1, color= 'b', cond_in = [None,None], ejes = None, anim = False):
     if None not in cond_in:
       a,b = cond_in
       cond_in = np.array([a,b])
       if cond_in.ndim == 1:
         cond_in = np.expand_dims(cond_in,1)
 
+    x, xmin, xmax = X
+    y, ymin, ymax = Y
+
+    Xn, Yn = grilla_2d(xmin,xmax,ymin,ymax,cantidad=100)
+
+    variables = (x,y)
+    U_ = sp.lambdify(variables, U, modules='numpy')
+    V_ = sp.lambdify(variables, V, modules='numpy')
+
+    Un = U_(Xn,Yn)
+    Vn = V_(Xn,Yn)
+
     if(ejes == None):
         #Definimos una figura
         fig = plt.figure()
         axes = fig.gca()
         #ax0 = fig.add_subplot()
-        if None not in cond_in:
-          axes.streamplot(X, Y, U, V,linewidth=1, density=densidad, color=color,
-                          start_points = cond_in.T, arrowstyle='->', arrowsize=1.5)
-          axes.plot(cond_in[0], cond_in[1], 'bo')
-        else:
-          axes.streamplot(X, Y, U, V,linewidth=1, density=densidad, color=color,
+        if anim == False:
+          axes.streamplot(Xn, Yn, Un, Vn,linewidth=1, density=densidad, color='b',
                           arrowstyle='->', arrowsize=1.5)
-        #ax0.plot(0,0,"red", marker = "o", markersize = 10.0)
-        axes.plot([0,0],[Y[0][0],Y[len(Y)-1][len(Y)-1]],'k',lw=3,alpha=0.25)#Eje y 
-        axes.plot([X[0][0],X[len(X)-1][len(X)-1]],[0,0],'k',lw=3,alpha=0.25)#Eje x
-        return None
-    else:
-        if None not in cond_in:
-          out = ejes.streamplot(X, Y, U, V,linewidth=1, density=densidad, color=color,
-                        start_points = cond_in.T, arrowstyle='->', arrowsize=1.5)
-          ejes.plot(cond_in[0], cond_in[1], 'bo')
+          if None not in cond_in:
+            axes.streamplot(Xn, Yn, Un, Vn,linewidth=1, density=densidad, color='r',
+                            start_points = cond_in.T, arrowstyle='->', arrowsize=1.5)
+            axes.plot(cond_in[0], cond_in[1], 'bo')
+
+          axes.plot([0,0],[Yn[0][0],Yn[len(Yn)-1][len(Yn)-1]],'k',lw=1.5,alpha=0.75)#Eje y
+          axes.plot([Xn[0][0],Xn[len(Xn)-1][len(Xn)-1]],[0,0],'k',lw=1.5,alpha=0.75)#Eje x
+          return None
         else:
-          out = ejes.streamplot(X, Y, U, V,linewidth=1, density=densidad, color=color,
-                        arrowstyle='->', arrowsize=1.5)
-        
-        ejes.plot([0,0],[Y[0][0],Y[len(Y)-1][len(Y)-1]],'k',lw=3,alpha=0.25)#Eje y 
-        ejes.plot([X[0][0],X[len(X)-1][len(X)-1]],[0,0],'k',lw=3,alpha=0.25)#Eje x
-        return out
+          axes.streamplot(Xn, Yn, Un, Vn,linewidth=1, density=densidad, color='b',
+                          arrowstyle='->', arrowsize=1.5)
+
+          axes.plot(cond_in[0], cond_in[1], 'bo')
+          ani = animate(U_,V_,cond_in,fig,axes,(xmin,xmax),(ymin,ymax))
+          axes.plot([0,0],[Yn[0][0],Yn[len(Yn)-1][len(Yn)-1]],'k',lw=1.5,alpha=0.75)#Eje y
+          axes.plot([Xn[0][0],Xn[len(Xn)-1][len(Xn)-1]],[0,0],'k',lw=1.5,alpha=0.75)#Eje x
+          return ani
+
+    else:
+        if anim == False:
+          ejes.streamplot(Xn, Yn, Un, Vn,linewidth=1, density=densidad, color='b',
+                          arrowstyle='->', arrowsize=1.5)
+          if None not in cond_in:
+            ejes.streamplot(Xn, Yn, Un, Vn,linewidth=1, density=densidad, color='r',
+                            start_points = cond_in.T, arrowstyle='->', arrowsize=1.5)
+            ejes.plot(cond_in[0], cond_in[1], 'bo')
+
+          ejes.plot([0,0],[Yn[0][0],Yn[len(Yn)-1][len(Yn)-1]],'k',lw=1.5,alpha=0.75)#Eje y
+          ejes.plot([Xn[0][0],Xn[len(Xn)-1][len(Xn)-1]],[0,0],'k',lw=1.5,alpha=0.75)#Eje x
+
+          return out
+        else:
+          ejes.streamplot(Xn, Yn, Un, Vn,linewidth=1, density=densidad,color='b',
+                          arrowstyle='->', arrowsize=1.5)
+          ejes.plot(cond_in[0], cond_in[1], 'bo')
+
+          ani = animate(U_,V_,cond_in,fig,ejes)
+          ejes.plot([0,0],[Yn[0][0],Yn[len(Yn)-1][len(Yn)-1]],'k',lw=1.5,alpha=0.75)#Eje y
+          ejes.plot([Xn[0][0],Xn[len(Xn)-1][len(Xn)-1]],[0,0],'k',lw=1.5,alpha=0.75)#Eje x
+          return ani
