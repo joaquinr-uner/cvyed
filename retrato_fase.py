@@ -45,7 +45,7 @@ def animate(U_,V_,cond_in,fig,axes,X=(-1,1),Y=(-1,1)):
   ani
   return ani
 
-def retrato_fase_anim(U,V,X=(sp.Symbol('x'),-1,1),Y=(sp.Symbol('y'),-1,1),densidad = 1, color= 'b', cond_in = [None,None], ejes = None, anim = False):
+def retrato_fase(U,V,X=(sp.Symbol('x'),-1,1),Y=(sp.Symbol('y'),-1,1),densidad = 1, color= 'b', cond_in = [None,None], ejes = None, anim = False):
     if None not in cond_in:
       a,b = cond_in
       cond_in = np.array([a,b])
