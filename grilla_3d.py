@@ -1,4 +1,4 @@
-import numpt as np
+import numpy as np
 def grilla_3d (x_min=0,x_max=0,y_min=0,y_max=0,z_min=0,z_max=0,cantidad=5):
     pasox = (x_max-x_min)/cantidad
     pasoy = (y_max-y_min)/cantidad
