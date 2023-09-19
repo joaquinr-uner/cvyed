@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import sympy as sp
 from matplotlib import animation, rc
 import IPython
 import numpy as np
