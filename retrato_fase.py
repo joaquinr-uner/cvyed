@@ -4,7 +4,7 @@ from matplotlib import animation, rc
 import IPython
 import numpy as np
 from scipy.integrate import odeint
-import grilla_2d
+from .grilla_2d import grilla_2d
 
 def animate(U_,V_,cond_in,fig,axes,X=(-1,1),Y=(-1,1)):
 
