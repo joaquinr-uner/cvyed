@@ -21,7 +21,7 @@ def animate(U_,V_,cond_in,fig,axes,X=(-1,1),Y=(-1,1)):
       return [Ur, Vr]
 
 
-  t = np.linspace(0, 1, 100)
+  t = np.linspace(0, 10, 100)
   Solutions = []
   for c in cond_in.T:
     solution = odeint(myODEs, c, t, args=(U_,V_))
