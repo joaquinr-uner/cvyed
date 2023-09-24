@@ -78,6 +78,8 @@ def retrato_fase(U,V,X=(sp.Symbol('x'),-1,1),Y=(sp.Symbol('y'),-1,1),densidad = 
                             start_points = cond_in.T, arrowstyle='->', arrowsize=1.5)
             axes.plot(cond_in[0], cond_in[1], 'bo')
 
+          axes.set_xlabel('x')
+          axes.set_ylabel('y')
           axes.plot([0,0],[Yn[0][0],Yn[len(Yn)-1][len(Yn)-1]],'k',lw=1.5,alpha=0.75)#Eje y
           axes.plot([Xn[0][0],Xn[len(Xn)-1][len(Xn)-1]],[0,0],'k',lw=1.5,alpha=0.75)#Eje x
           return None
@@ -86,9 +88,11 @@ def retrato_fase(U,V,X=(sp.Symbol('x'),-1,1),Y=(sp.Symbol('y'),-1,1),densidad = 
                           arrowstyle='->', arrowsize=1.5)
 
           axes.plot(cond_in[0], cond_in[1], 'bo')
-          ani = animate(U_,V_,cond_in,fig,axes,(xmin,xmax),(ymin,ymax))
+          axes.set_xlabel('x')
+          axes.set_ylabel('y')
           axes.plot([0,0],[Yn[0][0],Yn[len(Yn)-1][len(Yn)-1]],'k',lw=1.5,alpha=0.75)#Eje y
           axes.plot([Xn[0][0],Xn[len(Xn)-1][len(Xn)-1]],[0,0],'k',lw=1.5,alpha=0.75)#Eje x
+          ani = animate(U_,V_,cond_in,fig,axes,(xmin,xmax),(ymin,ymax))
           return ani
 
     else:
@@ -99,7 +103,9 @@ def retrato_fase(U,V,X=(sp.Symbol('x'),-1,1),Y=(sp.Symbol('y'),-1,1),densidad = 
             ejes.streamplot(Xn, Yn, Un, Vn,linewidth=1, density=densidad, color='r',
                             start_points = cond_in.T, arrowstyle='->', arrowsize=1.5)
             ejes.plot(cond_in[0], cond_in[1], 'bo')
-
+            
+          ejes.set_xlabel('x')
+          ejes.set_ylabel('y')
           ejes.plot([0,0],[Yn[0][0],Yn[len(Yn)-1][len(Yn)-1]],'k',lw=1.5,alpha=0.75)#Eje y
           ejes.plot([Xn[0][0],Xn[len(Xn)-1][len(Xn)-1]],[0,0],'k',lw=1.5,alpha=0.75)#Eje x
 
@@ -108,8 +114,10 @@ def retrato_fase(U,V,X=(sp.Symbol('x'),-1,1),Y=(sp.Symbol('y'),-1,1),densidad = 
           ejes.streamplot(Xn, Yn, Un, Vn,linewidth=1, density=densidad,color='b',
                           arrowstyle='->', arrowsize=1.5)
           ejes.plot(cond_in[0], cond_in[1], 'bo')
-
-          ani = animate(U_,V_,cond_in,fig,ejes)
+          ejes.set_xlabel('x')
+          ejes.set_ylabel('y')
           ejes.plot([0,0],[Yn[0][0],Yn[len(Yn)-1][len(Yn)-1]],'k',lw=1.5,alpha=0.75)#Eje y
           ejes.plot([Xn[0][0],Xn[len(Xn)-1][len(Xn)-1]],[0,0],'k',lw=1.5,alpha=0.75)#Eje x
+
+          ani = animate(U_,V_,cond_in,fig,ejes)
           return ani
