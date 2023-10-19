@@ -1,5 +1,6 @@
 import sympy as sp
-def serieFourier(x,ft,L,n):
+def serieFourier(ft,L,n):
+    x,m = sp.symbols('x,m')
     a0 = 1/L*sp.integrate(ft,(x,-L,L))
     am = 1/L*sp.integrate(ft*sp.cos(m*sp.pi*x/L),(x,-L,L))
     bm = 1/L*sp.integrate(ft*sp.sin(m*sp.pi*x/L),(x,-L,L))
