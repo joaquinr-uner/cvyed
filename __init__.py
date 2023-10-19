@@ -30,3 +30,4 @@ from .retrato_fase import retrato_fase, animate
 from .grafica_sucesion import grafica_sucesion
 from .sum_par import sum_par
 from .derivadas import derivadas
+from .serieFourier import serieFourier
