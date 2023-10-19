@@ -1,3 +1,4 @@
+import sympy as sp
 def serieFourier(x,ft,L,n):
     a0 = 1/L*sp.integrate(ft,(x,-L,L))
     am = 1/L*sp.integrate(ft*sp.cos(m*sp.pi*x/L),(x,-L,L))
