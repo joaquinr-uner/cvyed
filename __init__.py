@@ -22,6 +22,8 @@ from .plot_implicit_3d_cv import plot_implicit_3d_cv
 from .export3d_parametric_surface import export3d_parametric_surface
 from .grilla_2d import grilla_2d
 from .grilla_3d import grilla_3d
+from .campoVectorial_2d import campoVectorial_2d
+from .campoVectorial_3d import campoVectorial_3d
 
 from .indice import indice
 from .euler import euler
