@@ -2,7 +2,7 @@ import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
 from .grilla_2d import grilla_2d
-def campoVectorial_2d (F1,F2,X1,X2,ejes = None,color='b', angles='xy', scale_units='xy', scale=1):
+def campoVectorial_2d (F1,F2,X1,X2,ejes = None,color='b', angles='xy', scale_units='xy', scale=1, npuntos = 100):
     #posibles colores: 'b' blue 'g' green 'r' red 'c' cyan 'm' magenta 'y' yellow 'k' black 'w' white
     #Las expresiones de P y Q deben ser escritas con funciones de numpy. Por ejemplo: np.cos() y ademas contener las variables que se definan como dominio.
     
@@ -13,7 +13,7 @@ def campoVectorial_2d (F1,F2,X1,X2,ejes = None,color='b', angles='xy', scale_uni
     F1l = sp.lambdify([(x1,x2)],F1)
     F2l = sp.lambdify([(x1,x2)],F2)
     
-    x1n,x2n = grilla_2d(x1_min,x1_max,x2_min,x2_max,5)
+    x1n,x2n = grilla_2d(x1_min,x1_max,x2_min,x2_max,npuntos)
     F1n = F1l((x1n,x2n))
     F2n = F2l((x1n,x2n))
     
