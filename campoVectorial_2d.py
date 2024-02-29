@@ -1,6 +1,7 @@
 import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
+from .grilla_2d import grilla_2d
 def campoVectorial_2d (F1,F2,X1,X2,ejes = None,color='b', angles='xy', scale_units='xy', scale=1):
     #posibles colores: 'b' blue 'g' green 'r' red 'c' cyan 'm' magenta 'y' yellow 'k' black 'w' white
     #Las expresiones de P y Q deben ser escritas con funciones de numpy. Por ejemplo: np.cos() y ademas contener las variables que se definan como dominio.
