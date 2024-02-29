@@ -1,6 +1,7 @@
 import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
+from .grilla_3d import grilla_3d
 def campoVectorial_3d (F1,F2,F3,X1,X2,X3,ejes = None, color='b',normalizar = True):
   x1,x1_min,x1_max = X1
   x2,x2_min,x2_max = X2
