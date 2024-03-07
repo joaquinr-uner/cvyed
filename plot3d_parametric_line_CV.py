@@ -9,7 +9,7 @@ def plot3d_parametric_line_CV(X=0,Y=0,Z=0,p=np.linspace(0, 2,100),ejes = None):
     z = np.ones_like(p)*Z
     if(ejes == None):
         fig = plt.figure()
-        ax3d = fig.gca(projection='3d')
+        ax3d = fig.addsubplots(projection='3d')
         ax3d.plot(x, y, z)
     
         return None
