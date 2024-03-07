@@ -3,7 +3,7 @@ import sympy as sp
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-def plot3d_parametric_line_CV(X=0,Y=0,Z=0,T,ejes = None):
+def plot3d_parametric_line_CV(X=0,Y=0,Z=0,T = (sp.symbols('t'),0,1),ejes = None):
     t, t1, t2 = T
     X1_ = sp.lambdify(t, X, modules='numpy')
     X2_ = sp.lambdify(t, Y, modules='numpy')
@@ -24,7 +24,7 @@ def plot3d_parametric_line_CV(X=0,Y=0,Z=0,T,ejes = None):
     
     if(ejes == None):
         fig = plt.figure()
-        ax3d = fig.gca(projection='3d')
+        ax3d = fig.add_subplot(projection='3d')
         ax3d.plot(X1_num, X2_num, X3_num)
     
         return None
