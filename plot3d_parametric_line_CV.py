@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 def plot3d_parametric_line_CV(X=0,Y=0,Z=0,T,ejes = None):
-    T = t, t1, t2
+    t, t1, t2 = T
     X1_ = sp.lambdify(t, X, modules='numpy')
     X2_ = sp.lambdify(t, Y, modules='numpy')
     X3_ = sp.lambdify(t, Z, modules='numpy')
