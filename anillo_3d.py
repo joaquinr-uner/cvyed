@@ -1,4 +1,9 @@
 import sympy as sp
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.tri as mtri
+from .surf2stl import tri_write
+from scipy.spatial import Delaunay
 def anillo_3d(xc, yc, zc, rm=0, rM=1, normal = 0, angulo=2*sp.pi, ejes = None, archivo = None):
     """Genera un anillo de radio exterior rM y radio interior rm cuyo centro es (xc,yc,zc)."""
     """La variable ángulo permite generar un anillo incompleto."""
