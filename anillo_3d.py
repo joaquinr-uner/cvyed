@@ -44,7 +44,7 @@ def anillo_3d(xc, yc, zc, rm=0, rM=1, normal = 0, angulo=2*sp.pi, ejes = None, a
 
     if(ejes == None):
         fig = plt.figure()
-        ax = fig.gca(projection='3d')
+        ax = fig.add_subplot(111,projection='3d')
         ax.set_xlabel('x')
         ax.set_ylabel('y')
         ax.set_zlabel('z')
