@@ -1,4 +1,4 @@
-def elipse(x,y,z,a=1,b=1,c=0.5, ejes = None, archivo = None):
+def elipse(a=1,b=1,c=0.5, ejes = None, archivo = None):
     """Genera una esfera de radio r con centro en (x,y,z)."""
     """el nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
     
