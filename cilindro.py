@@ -1,3 +1,9 @@
+import sympy as sp
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.tri as mtri
+from .surf2stl import tri_write
+from scipy.spatial import Delaunay
 def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, ejes = None, archivo = None):
     """Genera un cilindro de radio r, cuyo base se centra en el punto (xc,yc,zc) y su altura es h."""
     """La orientación del cilindro se determina indicando el vector normal a la base del cilindro."""
