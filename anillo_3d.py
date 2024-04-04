@@ -1,3 +1,4 @@
+import sympy as sp
 def anillo_3d(xc, yc, zc, rm=0, rM=1, normal = 0, angulo=2*sp.pi, ejes = None, archivo = None):
     """Genera un anillo de radio exterior rM y radio interior rm cuyo centro es (xc,yc,zc)."""
     """La variable ángulo permite generar un anillo incompleto."""
