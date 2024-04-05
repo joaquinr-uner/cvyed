@@ -27,6 +27,7 @@ from .campoVectorial_3d import campoVectorial_3d
 from .cilindro import cilindro
 from .anillo_3d import anillo_3d
 from .elipse import elipse
+from .cono import cono
 
 from .indice import indice
 from .euler import euler
