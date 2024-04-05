@@ -6,7 +6,8 @@ from .surf2stl import tri_write
 from scipy.spatial import Delaunay
 def paraboloide(a=1,b=1, h=1, xc = 0, yc = 0, zc = 0, ejes = None, archivo = None):
     """Genera un paraboloide elíptico de ecuación z = (x/a)**2+(y/a)**2 con centro en (xc,yc,zc) y altura h.
-    el nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
+    La variable archivo permite exportar la figura en formato .stl.
+    El nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
     
     r = np.linspace(0, np.sqrt(h), endpoint=True, num=100)
     v = np.linspace(0, 2.0 * np.pi, endpoint=True, num=100)
