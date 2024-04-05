@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.tri as mtri
 from .surf2stl import tri_write
 from scipy.spatial import Delaunay
-def esfera(x,y,z,radio=1, ejes = None, archivo = None):
-    """Genera una esfera de radio r con centro en (x,y,z."""
+def esfera(xc,yc,zc,radio=1, ejes = None, archivo = None):
+    """Genera una esfera de radio r con centro en (xc,yc,zc."""
     """el nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
     
     u = np.linspace(0, 2.0 * np.pi, endpoint=True, num=100)
@@ -15,9 +15,9 @@ def esfera(x,y,z,radio=1, ejes = None, archivo = None):
 
     # This is the Mobius mapping, taking a u, v pair and returning an x, y, z
     # triple
-    X = x+radio*np.cos(u)*np.sin(v)
-    Y = y+radio*np.sin(u)*np.sin(v)
-    Z = z+radio*np.cos(v)
+    X = xc+radio*np.cos(u)*np.sin(v)
+    Y = yc+radio*np.sin(u)*np.sin(v)
+    Z = zc+radio*np.cos(v)
     # Triangulate parameter space to determine the triangles
     tri = mtri.Triangulation(u, v, triangles=None)
     if(archivo != None):
