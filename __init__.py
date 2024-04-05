@@ -28,6 +28,7 @@ from .cilindro import cilindro
 from .anillo_3d import anillo_3d
 from .elipse import elipse
 from .cono import cono
+from .paraboloide import paraboloide
 
 from .indice import indice
 from .euler import euler
