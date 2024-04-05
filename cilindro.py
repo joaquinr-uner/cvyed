@@ -4,9 +4,13 @@ import matplotlib.pyplot as plt
 import matplotlib.tri as mtri
 from .surf2stl import tri_write
 from scipy.spatial import Delaunay
-def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, ejes = None, archivo = None):
+def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, a=1, b=1, ejes = None, archivo = None):
     """Genera un cilindro de radio r, cuyo base se centra en el punto (xc,yc,zc) y su altura es h."""
+    """También podemos generar un cilindro elíptico pasando parámetros a y b distintos."""
     """La orientación del cilindro se determina indicando el vector normal a la base del cilindro."""
+    """normal == 0 -> Paralelo al eje z."""
+    """normal == 1 -> Paralelo al eje x."""
+    """normal == 2 -> Paralelo al eje y."""
     """el nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
 
 
@@ -30,21 +34,21 @@ def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, ejes = None, archivo = None
       
     if normal == 0:
         # vector normal del cilindro perpendicular al plano xy
-        x = xc + r*np.cos(u) 
-        y = yc + r*np.sin(u)
-        z = v
+        x = xc + a*r*np.cos(u) 
+        y = yc + b*r*np.sin(u)
+        z = zc + v
         
     if normal == 1:
         # vector normal del cilindro perpendicular al plano zy
-        x = v
-        y = yc + r*np.cos(u) 
-        z = zc + r*np.sin(u)
+        x = xc + v
+        y = yc + a*r*np.cos(u) 
+        z = zc + b*r*np.sin(u)
         
     if normal == 2:
         # vector normal del cilindro perpendicular al plano xz
-        x = xc + r*np.cos(u) 
-        y = v
-        z = zc + r*np.sin(u)
+        x = xc + a*r*np.cos(u) 
+        y = yc + v
+        z = zc + b*r*np.sin(u)
         
     
     # Triangulate parameter space to determine the triangles
