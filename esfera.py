@@ -5,8 +5,9 @@ import matplotlib.tri as mtri
 from .surf2stl import tri_write
 from scipy.spatial import Delaunay
 def esfera(xc,yc,zc,radio=1, ejes = None, archivo = None):
-    """Genera una esfera de radio r con centro en (xc,yc,zc."""
-    """el nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
+    """Genera una esfera de radio r con centro en (xc,yc,zc).
+    La variable archivo permite exportar la figura en formato .stl.
+    El nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
     
     u = np.linspace(0, 2.0 * np.pi, endpoint=True, num=100)
     v = np.linspace(0, 2.0 * np.pi, endpoint=True, num=100)
