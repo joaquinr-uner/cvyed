@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.tri as mtri
 from .surf2stl import tri_write
 from scipy.spatial import Delaunay
-def elipse(a=1,b=1, ejes = None, archivo = None):
+def cono(a=1,b=1, ejes = None, archivo = None):
     """Genera una esfera de radio r con centro en (x,y,z)."""
     """el nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
     
