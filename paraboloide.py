@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.tri as mtri
 from .surf2stl import tri_write
 from scipy.spatial import Delaunay
-def cono(a=1,b=1, xc = 0, yc = 0, zc = 0, ejes = None, archivo = None):
+def paraboloide(a=1,b=1, xc = 0, yc = 0, zc = 0, ejes = None, archivo = None):
     """Genera un paraboloide elíptico de ecuación z = (x/a)**2+(y/a)**2 con centro en (xc,yc,zc)."""
     """el nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
     
