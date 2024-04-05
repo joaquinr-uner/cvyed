@@ -4,8 +4,9 @@ import matplotlib.pyplot as plt
 import matplotlib.tri as mtri
 from .surf2stl import tri_write
 from scipy.spatial import Delaunay
-def elipse(a=1,b=1,c=0.5, ejes = None, archivo = None):
-    """Genera una esfera de radio r con centro en (x,y,z)."""
+def elipse(a=1,b=1,c=0.5,xc=0,yc=0,zc=0,ejes = None, archivo = None):
+    """Genera un elipsoide con semiejes a, b, c en la direccíon de x,c y z, respectivamente."""
+    """El elipsoide está centrado en (xc,yc,zc)."""
     """el nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
     
     u = np.linspace(0, np.pi, endpoint=True, num=100)
@@ -15,9 +16,9 @@ def elipse(a=1,b=1,c=0.5, ejes = None, archivo = None):
 
     # This is the Mobius mapping, taking a u, v pair and returning an x, y, z
     # triple
-    X = a*np.sin(u)*np.cos(v)
-    Y = b*np.sin(u)*np.sin(v)
-    Z = c*np.cos(u)
+    X = xc + a*np.sin(u)*np.cos(v)
+    Y = yc + b*np.sin(u)*np.sin(v)
+    Z = zc + c*np.cos(u)
     # Triangulate parameter space to determine the triangles
     tri = mtri.Triangulation(u, v)
     if(archivo != None):
