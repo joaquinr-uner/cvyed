@@ -5,13 +5,14 @@ import matplotlib.tri as mtri
 from .surf2stl import tri_write
 from scipy.spatial import Delaunay
 def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, a=1, b=1, ejes = None, archivo = None):
-    """Genera un cilindro de radio r, cuyo base se centra en el punto (xc,yc,zc) y su altura es h."""
-    """También podemos generar un cilindro elíptico pasando parámetros a y b distintos."""
-    """La orientación del cilindro se determina indicando el vector normal a la base del cilindro."""
-    """normal == 0 -> Paralelo al eje z."""
-    """normal == 1 -> Paralelo al eje x."""
-    """normal == 2 -> Paralelo al eje y."""
-    """el nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
+    """Genera un cilindro de radio r, cuyo base se centra en el punto (xc,yc,zc) y su altura es h.
+    También podemos generar un cilindro elíptico pasando parámetros a y b distintos.
+    La orientación del cilindro se determina indicando el vector normal a la base del cilindro.
+    normal == 0 -> Paralelo al eje z.
+    normal == 1 -> Paralelo al eje x.
+    normal == 2 -> Paralelo al eje y.
+    La variable archivo permite exportar la figura en formato .stl.
+    El nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
 
 
     # Make a mesh in the space of parameterisation variables u and v
