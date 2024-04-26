@@ -24,7 +24,7 @@ def esfera(xc,yc,zc,radio=1, ejes = None, archivo = None):
     if(archivo != None):
         #surf2stl.write(archivo, X, Y, Z)
         delaunay_tri = Delaunay(np.array([u, v]).T)
-        surf2stl.tri_write(archivo, X, Y, Z, delaunay_tri)     
+        tri_write(archivo, X, Y, Z, delaunay_tri)     
     
     
     if(ejes == None):
