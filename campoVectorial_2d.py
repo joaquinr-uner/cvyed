@@ -21,9 +21,9 @@ def campoVectorial_2d (F1,F2,X1,X2,ejes = None,color='b', angles='xy', scale_uni
     if normalizar==True:
         F1n = F1n/(np.sqrt(F1n**2+F2n**2))
         F2n = F2n/(np.sqrt(F1n**2+F2n**2))
-        F1n[np.isnan(F1n)] = 0
-        F2n[np.isnan(F2n)] = 0
-
+    
+    F1n[np.isnan(F1n)] = 0
+    F2n[np.isnan(F2n)] = 0
     
     if(ejes == None):
         fig = plt.figure()
