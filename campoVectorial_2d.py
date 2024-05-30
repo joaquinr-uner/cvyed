@@ -2,7 +2,7 @@ import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
 from .grilla_2d import grilla_2d
-def campoVectorial_2d (F1,F2,X1,X2,ejes = None,color='b', angles='xy', scale_units='xy', scale=1, npuntos = 10):
+def campoVectorial_2d (F1,F2,X1,X2,ejes = None,color='b', angles='xy', scale_units='xy', scale=1, npuntos = 10, normalizar=True):
     # F1, F2: Componentes del campo vectorial 2d
     # X1, X2: variables y rango de variación. Debe pasarse como una tupla con estructura (x, x_min, x_max)
     #posibles colores: 'b' blue 'g' green 'r' red 'c' cyan 'm' magenta 'y' yellow 'k' black 'w' white
@@ -17,6 +17,10 @@ def campoVectorial_2d (F1,F2,X1,X2,ejes = None,color='b', angles='xy', scale_uni
     x1n,x2n = grilla_2d(x1_min,x1_max,x2_min,x2_max,npuntos)
     F1n = F1l((x1n,x2n))
     F2n = F2l((x1n,x2n))
+
+    if normalizar==True:
+        F1n = F1n/(np.sqrt(F1n**2+F2n**2))
+        F2n = F2n/(np.sqrt(F1n**2+F2n**2))
     
     if(ejes == None):
         fig = plt.figure()
