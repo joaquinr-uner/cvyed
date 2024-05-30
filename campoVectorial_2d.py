@@ -2,7 +2,7 @@ import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
 from .grilla_2d import grilla_2d
-def campoVectorial_2d (F1,F2,X1,X2,ejes = None,color='b', angles='xy', scale_units='xy', scale=1, npuntos = 10):
+def campoVectorial_2d (F1,F2,X1,X2,ejes = None,color='b', angles='xy', scale_units='xy', scale=1, npuntos = 10,normalizar = False):
     # F1, F2: Componentes del campo vectorial 2d
     # X1, X2: variables y rango de variación. Debe pasarse como una tupla con estructura (x, x_min, x_max)
     #posibles colores: 'b' blue 'g' green 'r' red 'c' cyan 'm' magenta 'y' yellow 'k' black 'w' white
@@ -32,8 +32,8 @@ def campoVectorial_2d (F1,F2,X1,X2,ejes = None,color='b', angles='xy', scale_uni
         ax.grid()
         #ax.set_xlim(x1[0][0],x1[-1][-1])
         #ax.set_ylim(x2[0][0],x2[-1][-1])
-        ax.quiver(x1n,x2n,F1n,F2n, color = color,angles=angles, scale_units=scale_units, scale=scale)
+        ax.quiver(x1n,x2n,F1n,F2n, color = color,angles=angles, scale_units=scale_units, scale=scale, normalize=normalizar)
         return None
     else:
-        out = ejes.quiver(x1n,x2n,F1n,F2n, color = color,angles=angles, scale_units=scale_units, scale=scale)
+        out = ejes.quiver(x1n,x2n,F1n,F2n, color = color,angles=angles, scale_units=scale_units, scale=scale, normalize=normalizar)
         return out 
