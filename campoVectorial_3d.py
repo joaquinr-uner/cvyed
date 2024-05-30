@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from .grilla_3d import grilla_3d
 def campoVectorial_3d (F1,F2,F3,X1,X2,X3,ejes = None, color='b',normalizar = True):
+    # F1, F2, F3: Componentes del campo vectorial 3d
+    # X1, X2, X3: variables y rango de variación. Debe pasarse como una tupla con estructura (x, x_min, x_max)
+    #posibles colores: 'b' blue 'g' green 'r' red 'c' cyan 'm' magenta 'y' yellow 'k' black 'w' white
   x1,x1_min,x1_max = X1
   x2,x2_min,x2_max = X2
   x3,x3_min,x3_max = X3
