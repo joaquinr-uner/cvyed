@@ -40,7 +40,7 @@ def animate(U_,V_,cond_in,fig,axes,X=(-1,1),Y=(-1,1)):
       axes.set_xlabel('x')
       axes.set_ylabel('y')
 
-  ani = animation.FuncAnimation(fig, update, frames=np.arange(0,100,5), interval=100, blit=False, repeat=False)
+  ani = animation.FuncAnimation(fig, update, frames=np.arange(0,1000,20), interval=100, blit=False, repeat=False)
   plt.show()
   rc('animation', html='jshtml')
   ani
