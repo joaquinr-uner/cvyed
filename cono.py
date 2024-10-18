@@ -30,7 +30,7 @@ def cono(a=1,b=1, xc = 0, yc = 0, zc = 0, ejes = None, archivo = None):
     
     if(ejes == None):
         fig = plt.figure()
-        ax = fig.gca(projection='3d')
+        ax = fig.add_subplot(111, projection="3d")
         ax.set_xlabel('x')
         ax.set_ylabel('y')
         ax.set_zlabel('z')
