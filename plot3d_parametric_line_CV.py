@@ -24,7 +24,7 @@ def plot3d_parametric_line_CV(X=0,Y=0,Z=0,T = (sp.symbols('t'),0,1),ejes = None)
     
     if(ejes == None):
         fig = plt.figure()
-        ax3d = fig.add_subplot(projection='3d')
+        ax = fig.add_subplot(111, projection="3d")
         ax3d.plot(X1_num, X2_num, X3_num)
     
         return None
