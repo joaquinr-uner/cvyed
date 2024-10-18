@@ -4,7 +4,7 @@ def vector3d_cv (x1,x2,x3,y1,y2,y3,ejes = None, color='b',x_min=-5,x_max=5,y_min
     
     if(ejes == None):
         fig = plt.figure()
-        ax = fig.gca(projection='3d')
+        ax = fig.add_subplot(111, projection="3d")
         ax.set_xlim(x_min,x_max)
         ax.set_ylim(y_min,y_max)
         ax.set_zlim(z_min,z_max)    
