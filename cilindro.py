@@ -64,7 +64,7 @@ def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, a=1, b=1, ejes = None, arch
 
     if(ejes == None):
         fig = plt.figure()
-        ax = fig.gca(projection='3d')
+        ax = fig.add_subplot(111, projection="3d")
         ax.set_xlabel('x')
         ax.set_ylabel('y')
         ax.set_zlabel('z')
