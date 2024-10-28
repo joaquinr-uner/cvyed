@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.tri as mtri
 from .surf2stl import tri_write
 from scipy.spatial import Delaunay
-def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, a=1, b=1, ejes = None, archivo = None):
+def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, a=1, b=1, t=2*np.pi, ejes = None, archivo = None):
     """Genera un cilindro de radio r, cuyo base se centra en el punto (xc,yc,zc) y su altura es h.
     También podemos generar un cilindro elíptico pasando parámetros a y b distintos.
     La orientación del cilindro se determina indicando el vector normal a la base del cilindro.
@@ -16,7 +16,7 @@ def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, a=1, b=1, ejes = None, arch
 
 
     # Make a mesh in the space of parameterisation variables u and v
-    u = np.linspace(0, 2.0 * np.pi, endpoint=True, num=50)
+    u = np.linspace(0, t, endpoint=True, num=50)
     
     if normal == 0:
         # vector normal del cilindro perpendicular al plano xy
