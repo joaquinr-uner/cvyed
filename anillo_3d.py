@@ -23,19 +23,19 @@ def anillo_3d(xc, yc, zc, rm=0, rM=1, normal = 0, angulo=2*sp.pi, ejes = None, a
     u, v = u.flatten(), v.flatten()
       
     if normal == 0:
-        # vector normal del cilindro perpendicular al plano xy
+        # vector normal del anillo perpendicular al plano xy
         x = xc + v*np.cos(u) 
         y = yc + v*np.sin(u)
         z = np.repeat(zc, 2500)
         
     if normal == 1:
-        # vector normal del cilindro perpendicular al plano zy
+        # vector normal del anillo perpendicular al plano zy
         x = np.repeat(xc, 2500)
         y = yc + v*np.cos(u) 
         z = zc + v*np.sin(u)
         
     if normal == 2:
-        # vector normal del cilindro perpendicular al plano xz
+        # vector normal del anillo perpendicular al plano xz
         x = xc + v*np.cos(u) 
         y = np.repeat(yc, 2500)
         z = zc + v*np.sin(u)
