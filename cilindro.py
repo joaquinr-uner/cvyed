@@ -34,19 +34,19 @@ def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, a=1, b=1, t=2*np.pi, ejes =
     u, v = u.flatten(), v.flatten()
       
     if normal == 0:
-        # vector normal del cilindro perpendicular al plano xy
+        # ecuaciones parámetricas del cilindro perpendicular al plano xy
         x = xc + a*r*np.cos(u) 
         y = yc + b*r*np.sin(u)
         z = zc + v
         
     if normal == 1:
-        # vector normal del cilindro perpendicular al plano zy
+        # ecuaciones parámetricas del cilindro perpendicular al plano zy
         x = xc + v
         y = yc + a*r*np.cos(u) 
         z = zc + b*r*np.sin(u)
         
     if normal == 2:
-        # vector normal del cilindro perpendicular al plano xz
+        # ecuaciones parámetricas del cilindro perpendicular al plano xz
         x = xc + a*r*np.cos(u) 
         y = yc + v
         z = zc + b*r*np.sin(u)
