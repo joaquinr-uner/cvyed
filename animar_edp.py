@@ -9,7 +9,7 @@ def animar_edp(u,range_t,range_x,fig,axes):
   t, t_in, t_fin = range_t
   x, x_min, x_max = range_x
 
-  u_ = sp.lambdify((t,x), u.subs(m,50), modules='numpy')
+  u_ = sp.lambdify((t,x), u, modules='numpy')
 
   n = 1000
   xn = np.linspace(x_min,x_max,n)
