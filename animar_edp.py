@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
-import numpy as np
+import sympy as sp
 from matplotlib import animation, rc
+import IPython
+import numpy as np
 
 def animar_edp(u,range_t,range_x,fig,axes):
 
