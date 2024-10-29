@@ -34,6 +34,7 @@ from .indice import indice
 from .euler import euler
 from .plot_campo_de_direcciones import plot_campo_de_direcciones
 from .retrato_fase import retrato_fase, animate
+from .animar_edp import animar_edp
 from .grafica_sucesion import grafica_sucesion
 from .sum_par import sum_par
 from .derivadas import derivadas
