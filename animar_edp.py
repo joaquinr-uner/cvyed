@@ -3,15 +3,22 @@ import sympy as sp
 from matplotlib import animation, rc
 import IPython
 import numpy as np
+from .grilla_2d import grilla_2d
 
 def animar_edp(u,range_t,range_x,fig,axes):
 
   t, t_in, t_fin = range_t
   x, x_min, x_max = range_x
-
+  
   u_ = sp.lambdify((t,x), u, modules='numpy')
-
+  
   n = 1000
+
+  xi, ti = grilla_2d(x_min,x_max,t_in,t_fin,cantidad=100)
+  un = u_(ti,xi)
+
+  u_max, u_min = np.max(un), np.min(un)
+  
   xn = np.linspace(x_min,x_max,n)
   tn = np.linspace(t_in,t_fin,n//10)
   # Create the animation
