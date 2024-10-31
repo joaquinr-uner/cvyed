@@ -30,6 +30,7 @@ def animar_edp(u,range_t,range_x,fig,axes):
     axes.clear()
     axes.plot(xn,Uf,'b',label=f't = {frame:.2f}')
     axes.set_xlim(x_min, x_max)
+    axes.set_ylim(u_min, u_max)
     axes.set_xlabel('x')
     axes.set_ylabel('u(x,t)')
     axes.set_title('u')
