@@ -42,5 +42,5 @@ def animar_edp(u,range_t,range_x,fig=plt.figure(),axes=None):
   ani = animation.FuncAnimation(fig, update, frames=tn, interval=50, blit=False, repeat=True)
   plt.show()
   rc('animation', html='jshtml')
-  ani
+  #ani
   return ani
