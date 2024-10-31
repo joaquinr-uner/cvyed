@@ -5,7 +5,7 @@ import IPython
 import numpy as np
 from .grilla_2d import grilla_2d
 
-def animar_edp(u,range_t,range_x,fig,axes):
+def animar_edp(u,range_t,range_x,fig=plt.figure(),axes=fig.gca()):
 
   t, t_in, t_fin = range_t
   x, x_min, x_max = range_x
