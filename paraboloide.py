@@ -25,12 +25,12 @@ def paraboloide(a=1,b=1, h=1, xc = 0, yc = 0, zc = 0, normal=0, ejes = None, arc
         Y = yc + (r/b)*np.sin(v)
         Z = zc + normal/normal * r**2
 
-    if normal == 1:
+    if np.abs(normal) == 2:
         X = xc + normal/normal * r**2
         Y = yc + (r/a)*np.cos(v)
         Z = zc + (r/b)*np.sin(v)
 
-    if normal == 2:
+    if np.abs(normal) == 3:
         X = xc + (r/a)*np.cos(v)
         Y = yc + normal/normal * r**2
         Z = zc + (r/b)*np.sin(v)        
