@@ -33,19 +33,19 @@ def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, a=1, b=1, t=2*np.pi, ejes =
     u, v = np.meshgrid(u, v)
     u, v = u.flatten(), v.flatten()
       
-    if normal == 0:
+    if normal == 1:
         # ecuaciones parámetricas del cilindro perpendicular al plano xy
         x = xc + a*r*np.cos(u) 
         y = yc + b*r*np.sin(u)
         z = zc + v
         
-    if normal == 1:
+    if normal == 2:
         # ecuaciones parámetricas del cilindro perpendicular al plano zy
         x = xc + v
         y = yc + a*r*np.cos(u) 
         z = zc + b*r*np.sin(u)
         
-    if normal == 2:
+    if normal == 3:
         # ecuaciones parámetricas del cilindro perpendicular al plano xz
         x = xc + a*r*np.cos(u) 
         y = yc + v
