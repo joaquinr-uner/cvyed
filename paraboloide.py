@@ -4,8 +4,12 @@ import matplotlib.pyplot as plt
 import matplotlib.tri as mtri
 from .surf2stl import tri_write
 from scipy.spatial import Delaunay
-def paraboloide(a=1,b=1, h=1, xc = 0, yc = 0, zc = 0, ejes = None, archivo = None):
-    """Genera un paraboloide elíptico de ecuación z = (x/a)**2+(y/a)**2 con centro en (xc,yc,zc) y altura h.
+def paraboloide(a=1,b=1, h=1, xc = 0, yc = 0, zc = 0, normal=0, ejes = None, archivo = None):
+    """Genera un paraboloide elíptico con centro en (xc,yc,zc) y altura h.
+    La orientación del paraboloide se determina indicando el vector normal a la base del cilindro.
+    normal == 0 -> Paralelo al eje z (a en el sentido del eje x).
+    normal == 1 -> Paralelo al eje x (a en el sentido del eje y).
+    normal == 2 -> Paralelo al eje y (a en el sentido del eje x).
     La variable archivo permite exportar la figura en formato .stl.
     El nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
     
@@ -16,9 +20,21 @@ def paraboloide(a=1,b=1, h=1, xc = 0, yc = 0, zc = 0, ejes = None, archivo = Non
 
     # This is the Mobius mapping, taking a u, v pair and returning an x, y, z
     # triple
-    X = xc + (r/a)*np.cos(v)
-    Y = yc + (r/b)*np.sin(v)
-    Z = zc + r**2
+    if normal == 0:
+        X = xc + (r/a)*np.cos(v)
+        Y = yc + (r/b)*np.sin(v)
+        Z = zc + r**2
+
+    if normal == 1:
+        X = xc + r**2
+        Y = yc + (r/a)*np.cos(v)
+        Z = zc + (r/b)*np.sin(v)
+
+    if normal == 2:
+        X = xc + (r/a)*np.cos(v)
+        Y = yc + r**2
+        Z = zc + (r/b)*np.sin(v)        
+        
     # Triangulate parameter space to determine the triangles
     tri = mtri.Triangulation(r, v)
     if(archivo != None):
