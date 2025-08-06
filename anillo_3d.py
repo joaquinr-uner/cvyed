@@ -8,9 +8,9 @@ def anillo_3d(xc, yc, zc, rm=0, rM=1, normal = 0, angulo=2*sp.pi, ejes = None, a
     """Genera un anillo de radio exterior rM y radio interior rm cuyo centro es (xc,yc,zc).
     La variable ángulo permite generar un anillo incompleto.
     La orientación del disco se determina indicando el valor normal.
-    normal == 0 -> Paralelo al eje z.
-    normal == 1 -> Paralelo al eje x.
-    normal == 2 -> Paralelo al eje y.
+    normal == 1 -> Paralelo al eje z.
+    normal == 2 -> Paralelo al eje x.
+    normal == 3 -> Paralelo al eje y.
     La variable archivo permite exportar la figura en formato .stl.
     El nombre del archivo debe contener la extensión .stl y escribirse entre comillas simples 'archivo.stl'"""
      
@@ -22,19 +22,19 @@ def anillo_3d(xc, yc, zc, rm=0, rM=1, normal = 0, angulo=2*sp.pi, ejes = None, a
     u, v = np.meshgrid(u, v)
     u, v = u.flatten(), v.flatten()
       
-    if normal == 0:
+    if normal == 1:
         # vector normal del anillo perpendicular al plano xy
         x = xc + v*np.cos(u) 
         y = yc + v*np.sin(u)
         z = np.repeat(zc, 2500)
         
-    if normal == 1:
+    if normal == 2:
         # vector normal del anillo perpendicular al plano zy
         x = np.repeat(xc, 2500)
         y = yc + v*np.cos(u) 
         z = zc + v*np.sin(u)
         
-    if normal == 2:
+    if normal == 3:
         # vector normal del anillo perpendicular al plano xz
         x = xc + v*np.cos(u) 
         y = np.repeat(yc, 2500)
