@@ -20,19 +20,19 @@ def paraboloide(a=1,b=1, h=1, xc = 0, yc = 0, zc = 0, normal=0, ejes = None, arc
 
     # This is the Mobius mapping, taking a u, v pair and returning an x, y, z
     # triple
-    if np.abs(normal) == 1:
+    if abs(normal) == 1:
         X = xc + (r/a)*np.cos(v)
         Y = yc + (r/b)*np.sin(v)
-        Z = zc + normal/normal * r**2
+        Z = zc + abs(normal)/normal * r**2
 
-    if np.abs(normal) == 2:
-        X = xc + normal/normal * r**2
+    if abs(normal) == 2:
+        X = xc + abs(normal)/normal * r**2
         Y = yc + (r/a)*np.cos(v)
         Z = zc + (r/b)*np.sin(v)
 
-    if np.abs(normal) == 3:
+    if abs(normal) == 3:
         X = xc + (r/a)*np.cos(v)
-        Y = yc + normal/normal * r**2
+        Y = yc + abs(normal)/normal * r**2
         Z = zc + (r/b)*np.sin(v)        
         
     # Triangulate parameter space to determine the triangles
