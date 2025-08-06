@@ -18,15 +18,15 @@ def cilindro(r=1, h=5, xc=0, yc=0, zc=0, normal = 0, a=1, b=1, t=2*np.pi, ejes =
     # Make a mesh in the space of parameterisation variables u and v
     u = np.linspace(0, t, endpoint=True, num=50)
     
-    if normal == 0:
+    if normal == 1:
         # vector normal del cilindro perpendicular al plano xy
         v = np.linspace(zc, zc+h, endpoint=True, num=50)
         
-    if normal == 1:
+    if normal == 2:
         # vector normal del cilindro perpendicular al plano zy
         v = np.linspace(xc, xc+h, endpoint=True, num=50)
        
-    if normal == 2:
+    if normal == 3:
         # vector normal del cilindro perpendicular al plano xz
         v = np.linspace(yc, yc+h, endpoint=True, num=50)    
     
