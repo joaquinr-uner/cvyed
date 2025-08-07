@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.tri as mtri
 from .surf2stl import tri_write
 from scipy.spatial import Delaunay
-def anillo_3d(xc, yc, zc, rm=0, rM=1, normal = 0, angulo=2*sp.pi, ejes = None, archivo = None):
+def anillo_3d(xc, yc, zc, rm=0, rM=1, normal = 0, angulo=2*sp.pi, cmap=plt.cm.Spectral, ejes = None, archivo = None):
     """Genera un anillo de radio exterior rM y radio interior rm cuyo centro es (xc,yc,zc).
     La variable ángulo permite generar un anillo incompleto.
     La orientación del disco se determina indicando el valor normal.
@@ -57,8 +57,8 @@ def anillo_3d(xc, yc, zc, rm=0, rM=1, normal = 0, angulo=2*sp.pi, ejes = None, a
         ax.set_xlabel('x')
         ax.set_ylabel('y')
         ax.set_zlabel('z')
-        ax.plot_trisurf(x, y, z, triangles=tri.triangles, cmap=plt.cm.Spectral)
+        ax.plot_trisurf(x, y, z, triangles=tri.triangles, cmap=cmap)
         return None
     else:
-        out = ejes.plot_trisurf(x, y, z, triangles=tri.triangles, cmap=plt.cm.Spectral)
+        out = ejes.plot_trisurf(x, y, z, triangles=tri.triangles, cmap=cmap)
         return out   
